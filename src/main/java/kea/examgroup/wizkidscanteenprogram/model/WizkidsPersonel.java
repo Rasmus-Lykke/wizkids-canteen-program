@@ -25,11 +25,11 @@ import java.util.Date;
 
         @NotNull
         @Past
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyy")
         private Date dob;
 
         @Email(message = "Email should be valid")
-        private String username;
+        private String email;
 
         private String password;
 

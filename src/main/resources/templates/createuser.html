@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+
+<head>
+    <meta charset="utf-8">
+    <title>Wizkids Canteen Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <!-- Bulma Version 0.8.0-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.css"/>
+
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+    <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="container">
+    <div class="field">
+        <label class="label">First name</label>
+        <div class="control">
+            <label>
+                <input class="input" type="text" name="firstName" placeholder="First name">
+            </label>
+        </div>
+    </div>
+    <div class="field">
+        <label class="label">Last name</label>
+        <div class="control">
+            <label>
+                <input class="input" type="text" name="lastName" placeholder="Last name">
+            </label>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label" for="datepicker">
+            <input class="input" id="datepicker" name="dob" type="text">
+        </label>
+
+    </div>
+
+    <div class="field">
+        <label class="label" for="exampleInputEmail1">Email address
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email">
+        </label>
+    </div>
+
+    <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+            <label>
+                <input class="input" type="text" name="password" placeholder="Password">
+            </label>
+        </div>
+    </div>
+
+    <div class="dropdown is-not-active">
+        <div class="dropdown-trigger">
+            <label>
+                <select class="button" name="Gender">
+                    <option class="dropdown-item" value="MALE">Male</option>
+                    <option class="dropdown-item" value="FEMALE">Female</option>
+                    <option class="dropdown-item" value="OTHER">Other</option>
+                </select>
+            </label>
+        </div>
+    </div>
+</div>
+
+<script>
+    var datepicker = new ej.calendars.DatePicker({width: "255px"});
+    datepicker.appendTo('#datepicker');
+</script>
+
+</body>
+</html>

@@ -1,20 +1,61 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:mvc="http://www.springframework.org/schema/mvc"
+
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-    <title>Spring Security Example </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Free Bulma template</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <!-- Bulma Version 0.8.0-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/loginCSS.css">
 </head>
+
 <body>
-<div th:if="${param.error}">
-    Invalid username and password.
-</div>
-<div th:if="${param.logout}">
-    You have been logged out.
-</div>
-<form th:action="@{/login}" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
-    <div><input type="submit" value="Sign In"/></div>
-</form>
+<section class="hero is-success is-fullheight">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <div class="column is-4 is-offset-4">
+                <h3 class="title has-text-black">Login</h3>
+                <hr class="login-hr">
+                <p class="subtitle has-text-black">Please login to proceed.</p>
+                <p class="subtitle has-text-danger" th:if="${param.error}">Invalid username and password.</p>
+                <p class="subtitle has-text-danger" th:if="${param.logout}">You have been logged out.</p>
+                <div class="box">
+                    <figure class="avatar">
+                        <img src="images/WizkidsLogo.png" alt="Wizkids Logo">
+                    </figure>
+                    <form th:action="@{/login}" method="post">
+                        <div class="field">
+                            <div class="control">
+                                <label>
+                                    <input class="input is-medium" type="text" name="username"
+                                           placeholder="Your username" autofocus="">
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <label>
+                                    <input class="input is-medium" type="password" name="password"
+                                           placeholder="Your Password">
+                                </label>
+                            </div>
+                        </div>
+                        <button class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script async type="text/javascript" src="../js/bulma.js"></script>
 </body>
+
 </html>

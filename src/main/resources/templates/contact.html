@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <title>Wizkids Canteen Login</title>
@@ -10,15 +9,14 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.css"/>
 
 </head>
-
 <body>
 <div class="tabs is-large columns is-vcentered">
     <div class="column is-8 is-paddingless" >
         <ul style="padding-top: 15px; padding-left: 100px">
-            <li class="is-active"><a href="/home"><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
+            <li><a href="/home"><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
             <li><a href="/menu">Menu</a></li>
             <li><a href="/orders">Orders</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li class="is-active"><a href="/contact">Contact</a></li>
         </ul>
     </div>
     <div class="column is-paddingless">
@@ -28,10 +26,6 @@
             </li>
         </ul>
     </div>
-</div>
-
-<div>
-
 </div>
 </body>
 </html>
