@@ -15,16 +15,17 @@
 <div class="tabs is-large columns is-vcentered">
     <div class="column is-8 is-paddingless" >
         <ul style="padding-top: 15px; padding-left: 100px">
-            <li class="is-active"><a href="/home"><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
-            <li><a href="/menu">Menu</a></li>
-            <li><a href="/orders">Orders</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><a><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
+            <li class="is-active"><a href="/menu">Menu</a></li>
+            <li><a href="/orders">Ordrer</a></li>
+            <li><a href="/forum">Forum</a></li>
+            <li><a href="/hjælp">Hjælp</a></li>
         </ul>
     </div>
     <div class="column is-paddingless">
         <ul class="is-right" style="padding-top: 15px; padding-right: 100px">
             <li>
-                <a th:href="@{/logout}" type="submit">Logout</a>
+                <a th:href="@{/logout}" type="submit">Log af</a>
             </li>
         </ul>
     </div>

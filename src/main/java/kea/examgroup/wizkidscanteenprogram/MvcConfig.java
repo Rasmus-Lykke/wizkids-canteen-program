@@ -1,7 +1,6 @@
 package kea.examgroup.wizkidscanteenprogram;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -14,9 +13,10 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/login").setViewName("login");
         registry.addViewController("/createuser").setViewName("createuser");
         registry.addViewController("/orders").setViewName("orders");
-        registry.addViewController("/contact").setViewName("contact");
+        registry.addViewController("/forum").setViewName("forum");
         registry.addViewController("/createmenu").setViewName("createmenu");
         registry.addViewController("/menu").setViewName("menu");
+        registry.addViewController("/help").setViewName("help");
     }
 
 }
