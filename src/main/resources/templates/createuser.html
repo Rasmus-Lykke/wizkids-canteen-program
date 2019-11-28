@@ -15,59 +15,61 @@
 
 </head>
 <body>
-<div class="container">
-    <div class="field">
-        <label class="label">First name</label>
-        <div class="control">
-            <label>
-                <input class="input" type="text" name="firstName" placeholder="First name">
+<form method="post" action="/createnewuser">
+    <div class="container">
+        <div class="field">
+            <label class="label">First name</label>
+            <div class="control">
+                <label>
+                    <input class="input" type="text" name="firstName" placeholder="First name">
+                </label>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Last name</label>
+            <div class="control">
+                <label>
+                    <input class="input" type="text" name="lastName" placeholder="Last name">
+                </label>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="label" for="datepicker">
+                <input class="input" id="datepicker" name="dob" type="text">
             </label>
         </div>
-    </div>
-    <div class="field">
-        <label class="label">Last name</label>
-        <div class="control">
-            <label>
-                <input class="input" type="text" name="lastName" placeholder="Last name">
+
+        <div class="field">
+            <label class="label" for="exampleInputEmail1">Email address
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter email">
             </label>
         </div>
-    </div>
 
-    <div class="field">
-        <label class="label" for="datepicker">
-            <input class="input" id="datepicker" name="dob" type="text">
-        </label>
+        <div class="field">
+            <label class="label">Password</label>
+            <div class="control">
+                <label>
+                    <input class="input" type="text" name="password" placeholder="Password">
+                </label>
+            </div>
+        </div>
 
-    </div>
-
-    <div class="field">
-        <label class="label" for="exampleInputEmail1">Email address
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                   placeholder="Enter email">
-        </label>
-    </div>
-
-    <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-            <label>
-                <input class="input" type="text" name="password" placeholder="Password">
-            </label>
+        <div class="dropdown is-not-active">
+            <div class="dropdown-trigger">
+                <label>
+                    <select class="button" name="Gender">
+                        <option class="dropdown-item" value="MALE">Male</option>
+                        <option class="dropdown-item" value="FEMALE">Female</option>
+                        <option class="dropdown-item" value="OTHER">Other</option>
+                    </select>
+                </label>
+            </div>
         </div>
     </div>
-
-    <div class="dropdown is-not-active">
-        <div class="dropdown-trigger">
-            <label>
-                <select class="button" name="Gender">
-                    <option class="dropdown-item" value="MALE">Male</option>
-                    <option class="dropdown-item" value="FEMALE">Female</option>
-                    <option class="dropdown-item" value="OTHER">Other</option>
-                </select>
-            </label>
-        </div>
-    </div>
-</div>
+    <input type="submit" value="Book">
+</form>
 
 <script>
     var datepicker = new ej.calendars.DatePicker({width: "255px"});

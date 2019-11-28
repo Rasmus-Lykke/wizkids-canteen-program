@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
       xmlns:mvc="http://www.springframework.org/schema/mvc"
 
-xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +48,14 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
                                 </label>
                             </div>
                         </div>
-                        <button class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                        <div>
+                            <button class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in"
+                                                                                                   aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div style="padding-top: 10px">
+                            <a style="text-decoration: underline" class="link is-size-4" type="submit" href="/createuser"> Create user</a>
+                        </div>
                     </form>
                 </div>
             </div>

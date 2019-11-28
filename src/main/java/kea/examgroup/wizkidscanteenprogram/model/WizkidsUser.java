@@ -2,7 +2,6 @@ package kea.examgroup.wizkidscanteenprogram.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -12,8 +11,8 @@ import java.util.Date;
 
     @Data
     @Entity
-    @Table(name = "wizkidspersonel")
-    public class WizkidsPersonel {
+    @Table(name = "wizkidsuser")
+    public class WizkidsUser {
 
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,16 +24,17 @@ import java.util.Date;
 
         @NotNull
         @Past
-        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyy")
+        @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
         private Date dob;
 
         @Email(message = "Email should be valid")
-        private String email;
+        private String username;
 
         private String password;
 
-        @Enumerated(EnumType.STRING)
-        private Gender gender;
+        private String gender;
+
+        private boolean enabled = true;
 
     }
 
