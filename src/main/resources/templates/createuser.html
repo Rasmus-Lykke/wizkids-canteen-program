@@ -15,60 +15,87 @@
 
 </head>
 <body>
-<form method="post" action="/createnewuser">
-    <div class="container">
-        <div class="field">
-            <label class="label">First name</label>
-            <div class="control">
-                <label>
-                    <input class="input" type="text" name="firstName" placeholder="First name">
-                </label>
-            </div>
-        </div>
-        <div class="field">
-            <label class="label">Last name</label>
-            <div class="control">
-                <label>
-                    <input class="input" type="text" name="lastName" placeholder="Last name">
-                </label>
-            </div>
-        </div>
+<form method="post" th:action="@{'/createnewuser'}">
+    <div class="columns is-mobile is-centered" style="padding-top: 5rem">
+        <article class="tile is-4 box">
+            <div class="container">
+                <div class="field">
+                    <label class="label">Fornavn</label>
+                    <div class="control">
+                        <label>
+                            <input class="input is-halfwidth" type="text" name="firstName" placeholder="Fornavn">
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Efternavn</label>
+                    <div class="control">
+                        <label>
+                            <input class="input" type="text" name="lastName" placeholder="Efternavn">
+                        </label>
+                    </div>
+                </div>
 
-        <div class="field">
-            <label class="label" for="datepicker">
-                <input class="input" id="datepicker" name="dob" type="text">
-            </label>
-        </div>
 
-        <div class="field">
-            <label class="label" for="exampleInputEmail1">Email address
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                       placeholder="Enter email">
-            </label>
-        </div>
+                <div class="field">
+                    <label class="label" for="exampleInputEmail1">E-mail</label>
+                    <div>
+                        <label>
+                            <input type="email" name="username" class="input" id="exampleInputEmail1"
+                                   placeholder="examle@gmail.com">
+                        </label>
+                    </div>
+                </div>
 
-        <div class="field">
-            <label class="label">Password</label>
-            <div class="control">
-                <label>
-                    <input class="input" type="text" name="password" placeholder="Password">
-                </label>
+                <div class="field">
+                    <label class="label">Adgangskode</label>
+                    <div class="control">
+                        <label>
+                            <input class="input" type="password" name="password" placeholder="Adgangskode">
+                        </label>
+                    </div>
+                </div>
+
+                <div class=" column is-vcentered">
+                    <div class="dropdown is-not-active">
+                        <div class="dropdown-trigger">
+                            <label>
+                                <select class="button" name="Gender">
+                                    <option class="dropdown-item" value="MALE">Mand</option>
+                                    <option class="dropdown-item" value="FEMALE">Dame</option>
+                                    <option class="dropdown-item" value="OTHER">Andet</option>
+                                </select>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="dropdown is-not-active">
+                        <div class="dropdown-trigger">
+                            <label style="padding-left: 1rem">
+                                <select class="button" name="role">
+                                    <option class="dropdown-item" value="ROLE_USER">Wizkids personale</option>
+                                    <option class="dropdown-item" value="ROLE_ADMIN">Kantine personale</option>
+                                </select>
+                            </label>
+                            <label style="padding-left: 1rem" for="datepicker">
+                                <input id="datepicker" name="dob" type="text">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div>
+
+                    </div>
+
+
+                </div>
+                <div style="padding-top: 0.75rem" class="box radius-small is-small has-text-centered">
+                    <input class="button is-link is-rounded" type="submit" value="Opret bruger">
+                </div>
             </div>
-        </div>
-
-        <div class="dropdown is-not-active">
-            <div class="dropdown-trigger">
-                <label>
-                    <select class="button" name="Gender">
-                        <option class="dropdown-item" value="MALE">Male</option>
-                        <option class="dropdown-item" value="FEMALE">Female</option>
-                        <option class="dropdown-item" value="OTHER">Other</option>
-                    </select>
-                </label>
-            </div>
-        </div>
+        </article>
     </div>
-    <input type="submit" value="Book">
+
 </form>
 
 <script>

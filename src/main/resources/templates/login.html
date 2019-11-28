@@ -26,6 +26,7 @@
                 <p class="subtitle has-text-black">Please login to proceed.</p>
                 <p class="subtitle has-text-danger" th:if="${param.error}">Invalid username and password.</p>
                 <p class="subtitle has-text-danger" th:if="${param.logout}">You have been logged out.</p>
+                <p class="subtitle has-text-success" th:if="${param.usercreated}">User have been created</p>
                 <div class="box">
                     <figure class="avatar">
                         <img src="images/WizkidsLogo.png" alt="Wizkids Logo">
@@ -49,12 +50,12 @@
                             </div>
                         </div>
                         <div>
-                            <button class="button is-block is-info is-large is-fullwidth">Login <i class="fa fa-sign-in"
-                                                                                                   aria-hidden="true"></i>
+                            <button class="button is-block is-info is-large is-fullwidth">Login
+                                <i class="fa fa-sign-in" aria-hidden="true"></i>
                             </button>
                         </div>
                         <div style="padding-top: 10px">
-                            <a style="text-decoration: underline" class="link is-size-4" type="submit" href="/createuser"> Create user</a>
+                            <a style="text-decoration: underline" class="link is-size-4" href="/createuser">Opret bruger</a>
                         </div>
                     </form>
                 </div>

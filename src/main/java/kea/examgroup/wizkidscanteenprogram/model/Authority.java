@@ -15,7 +15,7 @@ public class Authority {
 
     @ManyToOne
     @JoinColumn(name="wizkidsuser_id")
-    private long wizkidsUser;
+    private WizkidsUser wizkidsUser;
 
     private String authority;
 }

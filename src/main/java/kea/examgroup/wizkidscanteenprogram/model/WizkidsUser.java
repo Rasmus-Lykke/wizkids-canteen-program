@@ -36,6 +36,9 @@ import java.util.Date;
 
         private boolean enabled = true;
 
+        @Transient
+        private String role;
+
     }
 
 
