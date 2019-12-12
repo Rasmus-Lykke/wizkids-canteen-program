@@ -24,9 +24,9 @@
                 <h3 class="title has-text-black">Login</h3>
                 <hr class="login-hr">
                 <p class="subtitle has-text-black">Please login to proceed.</p>
-                <p class="subtitle has-text-danger" th:if="${param.error}">Invalid username and password.</p>
-                <p class="subtitle has-text-danger" th:if="${param.logout}">You have been logged out.</p>
-                <p class="subtitle has-text-success" th:if="${param.usercreated}">User have been created</p>
+                <p class="subtitle has-text-danger" th:if="${param.error}">Forkert brugernavn eller adgangskode.</p>
+                <p class="subtitle has-text-danger" th:if="${param.logout}">Du er blevet logget ud.</p>
+                <p class="subtitle has-text-success" th:if="${param.usercreated}">Bruger er blevet oprettet.</p>
                 <div class="box">
                     <figure class="avatar">
                         <img src="images/WizkidsLogo.png" alt="Wizkids Logo">

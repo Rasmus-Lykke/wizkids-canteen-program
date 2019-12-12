@@ -38,7 +38,6 @@ public class WizkidsUserController {
                 new RedirectView("/login?usercreated", true));
     }
 
-
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
     public ModelAndView checkUserType(HttpServletRequest request) {
 

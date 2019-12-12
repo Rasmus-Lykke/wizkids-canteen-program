@@ -37,6 +37,7 @@
     <div class="columns is-mobile is-centered" style="padding-top: 5rem">
         <article class="tile is-4 box">
             <div class="container">
+                <p class="subtitle has-text-success" th:if="${param.menucreated}">Menu er blevet oprettet.</p>
                 <div class="field">
                     <label class="label">Opret menu</label>
                     <div class="control">
@@ -49,7 +50,7 @@
                 <div style="padding-bottom: 1rem" class="">
                     <div class="">
                         <label style="padding-left: 1rem" for="datepicker">
-                            <input id="datepicker" name="dob" type="text">
+                            <input id="datepicker" name="date" type="text">
                         </label>
                     </div>
                 </div>
@@ -61,14 +62,12 @@
                 </div>
 
                 <div>
-                    <input class="button is-link is-rounded" type="submit" value="Opret bruger">
+                    <input class="button is-link is-rounded" type="submit" value="Opret menu">
                 </div>
             </div>
         </article>
     </div>
 </form>
-
-
 
 <script>
     var datepicker = new ej.calendars.DatePicker({width: "255px"});

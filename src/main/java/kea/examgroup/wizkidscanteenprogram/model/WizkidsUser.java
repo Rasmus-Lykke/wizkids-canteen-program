@@ -25,7 +25,7 @@ import java.util.Date;
         @NotNull
         @Past
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
-        private Date dob;
+        private Date dateOfBirth;
 
         @Email(message = "Email should be valid")
         private String username;

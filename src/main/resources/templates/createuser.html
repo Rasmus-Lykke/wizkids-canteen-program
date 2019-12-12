@@ -73,21 +73,15 @@
                         <div class="dropdown-trigger">
                             <label style="padding-left: 1rem">
                                 <select class="button" name="role">
-                                    <option class="dropdown-item" value="ROLE_USER">Wizkids personale</option>
-                                    <option class="dropdown-item" value="ROLE_ADMIN">Kantine personale</option>
+                                    <option class="dropdown-item" value="ROLE_USER">Wizkids</option>
+                                    <option class="dropdown-item" value="ROLE_ADMIN">Kantine</option>
                                 </select>
                             </label>
                             <label style="padding-left: 1rem" for="datepicker">
-                                <input id="datepicker" name="dob" type="text">
+                                <input id="datepicker" name="dateOfBirth" type="text">
                             </label>
                         </div>
                     </div>
-
-                    <div>
-
-                    </div>
-
-
                 </div>
                 <div style="padding-top: 0.75rem" class="box radius-small is-small has-text-centered">
                     <input class="button is-link is-rounded" type="submit" value="Opret bruger">
@@ -99,7 +93,7 @@
 </form>
 
 <script>
-    var datepicker = new ej.calendars.DatePicker({width: "255px"});
+    var datepicker = new ej.calendars.DatePicker({width: "120px"});
     datepicker.appendTo('#datepicker');
 </script>
 
