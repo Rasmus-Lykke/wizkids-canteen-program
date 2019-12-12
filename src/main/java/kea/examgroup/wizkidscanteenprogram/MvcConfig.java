@@ -8,15 +8,24 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfig implements WebMvcConfigurer {
 
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/login").setViewName("login");
+
+        registry.addViewController("/personelorders").setViewName("personelorders");
+        registry.addViewController("/personelforum").setViewName("personelforum");
+        registry.addViewController("/personelmenu").setViewName("personelmenu");
+        registry.addViewController("/personelhelp").setViewName("personelhelp");
+
+        registry.addViewController("/canteenmenu").setViewName("canteenmenu");
+        registry.addViewController("/canteenemail").setViewName("canteenemail");
+        registry.addViewController("/canteenforum").setViewName("canteenforum");
+        registry.addViewController("/canteenhelp").setViewName("canteenhelp");
+        registry.addViewController("/canteenorders").setViewName("canteenorders");
+
         registry.addViewController("/createuser").setViewName("createuser");
-        registry.addViewController("/orders").setViewName("orders");
-        registry.addViewController("/forum").setViewName("forum");
-        registry.addViewController("/createmenu").setViewName("createmenu");
-        registry.addViewController("/menu").setViewName("menu");
-        registry.addViewController("/help").setViewName("help");
         registry.addViewController("/createnewuser").setViewName("createnewuser");
+
         registry.addViewController("/").setViewName("login");
+        registry.addViewController("/login").setViewName("login");
+
     }
 
 }

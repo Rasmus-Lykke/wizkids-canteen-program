@@ -11,7 +11,7 @@ import java.util.Date;
 
     @Data
     @Entity
-    @Table(name = "wizkidsuser")
+    @Table(name = "wizkidsusers")
     public class WizkidsUser {
 
         @Id

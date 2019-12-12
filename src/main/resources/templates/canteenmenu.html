@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Wizkids Canteen Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <!-- Bulma Version 0.8.0-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.css"/>
+
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+    <link href="https://cdn.syncfusion.com/ej2/material.css" rel="stylesheet">
+
+</head>
+<body>
+<div class="tabs is-large columns is-vcentered">
+    <div class="column is-8 is-paddingless" >
+        <ul style="padding-top: 15px; padding-left: 100px">
+            <li><a><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
+            <li class="is-active"><a href="/canteenmenu">Menu</a></li>
+            <li><a href="/canteenorders">Ordrer</a></li>
+            <li><a href="/canteenforum">Forum</a></li>
+            <li><a href="/canteenhelp">Hjælp</a></li>
+            <li><a href="/canteenemail">E-mail</a></li>
+        </ul>
+    </div>
+    <div class="column is-paddingless">
+        <ul class="is-right" style="padding-top: 15px; padding-right: 100px">
+            <li>
+                <a th:href="@{/logout}" type="submit">Log ud</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<form method="post" th:action="@{'/createmenu'}">
+    <div class="columns is-mobile is-centered" style="padding-top: 5rem">
+        <article class="tile is-4 box">
+            <div class="container">
+                <div class="field">
+                    <label class="label">Opret menu</label>
+                    <div class="control">
+                        <label>
+                            <input class="input is-halfwidth" type="text" name="title" placeholder="Titel">
+                        </label>
+                    </div>
+                </div>
+
+                <div style="padding-bottom: 1rem" class="">
+                    <div class="">
+                        <label style="padding-left: 1rem" for="datepicker">
+                            <input id="datepicker" name="dob" type="text">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div>
+                        <textarea class="textarea" name="description" placeholder="Beskrivelse"></textarea>
+                    </div>
+                </div>
+
+                <div>
+                    <input class="button is-link is-rounded" type="submit" value="Opret bruger">
+                </div>
+            </div>
+        </article>
+    </div>
+</form>
+
+
+
+<script>
+    var datepicker = new ej.calendars.DatePicker({width: "255px"});
+    datepicker.appendTo('#datepicker');
+</script>
+
+</body>
+</html>

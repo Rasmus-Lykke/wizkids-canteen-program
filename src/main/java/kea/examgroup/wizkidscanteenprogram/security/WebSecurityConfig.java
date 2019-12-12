@@ -31,6 +31,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/login", "/createuser", "/createnewuser", "/css/**", "/images/**", "/test").permitAll()
+                .antMatchers("/personelforum", "/personelhelp", "/personelmenu", "/personelorders").hasRole("USER")
+                .antMatchers("/canteenforum", "/canteenhelp", "/canteenmenu", "/canteenorders", "/canteenemail").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
@@ -48,12 +50,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
-                .usersByUsernameQuery("SELECT username, password, enabled FROM wizkidsuser WHERE username=?")
-                .authoritiesByUsernameQuery("SELECT wizkidsuser.username AS username, " +
-                        "authority.authority AS authority " +
-                        "FROM wizkidsuser JOIN authority " +
-                        "ON wizkidsuser.id = authority.wizkidsuser_id " +
-                        "WHERE wizkidsuser.username=?")
+                .usersByUsernameQuery("SELECT username, password, enabled FROM wizkidsusers WHERE username=?")
+                .authoritiesByUsernameQuery("SELECT wizkidsusers.username AS username, " +
+                        "authorities.authority AS authority " +
+                        "FROM wizkidsusers JOIN authorities " +
+                        "ON wizkidsusers.id = authorities.wizkidsuser_id " +
+                        "WHERE wizkidsusers.username=?")
                 .passwordEncoder(new BCryptPasswordEncoder());
     }
 

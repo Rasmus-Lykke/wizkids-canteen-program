@@ -6,24 +6,19 @@ import kea.examgroup.wizkidscanteenprogram.repository.AuthorityRepository;
 import kea.examgroup.wizkidscanteenprogram.repository.WizkidsUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-
 @RestController
 public class WizkidsUserController {
 
     @Autowired
     private WizkidsUserRepository wizkidsUSerRepository;
-
     @Autowired
     private AuthorityRepository authorityRepository;
-
     @Autowired
     PasswordEncoder passwordEncoder;
 
@@ -41,5 +36,25 @@ public class WizkidsUserController {
 
         return new ModelAndView(
                 new RedirectView("/login?usercreated", true));
+    }
+
+
+    @RequestMapping(value = "/menu", method = RequestMethod.GET)
+    public ModelAndView checkUserType(HttpServletRequest request) {
+
+        if(request.isUserInRole("ROLE_USER")){
+            System.out.println("Logged in as: USER");
+            return new ModelAndView(
+                    new RedirectView("/personelmenu", true));
+
+        } else if(request.isUserInRole("ROLE_ADMIN")) {
+            System.out.println("Logged in as: ADMIN");
+            return new ModelAndView(
+                    new RedirectView("/canteenmenu", true));
+
+        } else {
+            return new ModelAndView(
+                    new RedirectView("/login", true));
+        }
     }
 }

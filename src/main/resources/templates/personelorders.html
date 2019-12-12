@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Wizkids Canteen Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <!-- Bulma Version 0.8.0-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.css"/>
+
+</head>
+<body>
+<div class="tabs is-large columns is-vcentered">
+    <div class="column is-8 is-paddingless" >
+        <ul style="padding-top: 15px; padding-left: 100px">
+            <li><a><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
+            <li><a href="/personelmenu">Menu</a></li>
+            <li class="is-active"><a href="/personelorders">Ordrer</a></li>
+            <li><a href="/personelforum">Forum</a></li>
+            <li><a href="/personelhelp">Hjælp</a></li>
+        </ul>
+    </div>
+    <div class="column is-paddingless">
+        <ul class="is-right" style="padding-top: 15px; padding-right: 100px">
+            <li>
+                <a th:href="@{/logout}" type="submit">Log ud</a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
