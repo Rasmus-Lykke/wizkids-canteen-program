@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="tabs is-large columns is-vcentered">
-    <div class="column is-8 is-paddingless" >
+    <div class="column is-8 is-paddingless">
         <ul style="padding-top: 15px; padding-left: 100px">
             <li><a><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
             <li class="is-active"><a href="/canteenmenu">Menu</a></li>
@@ -33,10 +33,10 @@
     </div>
 </div>
 
-<form method="post" th:action="@{'/createmenu'}">
-    <div class="columns is-mobile is-centered" style="padding-top: 5rem">
-        <article class="tile is-4 box">
-            <div class="container">
+<div class="columns" style="padding: 5rem">
+    <div class="column is-vcentered is-one-third">
+        <div class="column box">
+            <form method="post" class="container" th:action="@{'/createmenu'}">
                 <p class="subtitle has-text-success" th:if="${param.menucreated}">Menu er blevet oprettet.</p>
                 <div class="field">
                     <label class="label">Opret menu</label>
@@ -57,20 +57,47 @@
 
                 <div class="field">
                     <div>
-                        <textarea class="textarea" name="description" placeholder="Beskrivelse"></textarea>
+                        <label>
+                            <textarea class="textarea" name="description" placeholder="Beskrivelse"
+                                      maxlength="150">
+                            </textarea>
+                        </label>
                     </div>
                 </div>
 
                 <div>
                     <input class="button is-link is-rounded" type="submit" value="Opret menu">
                 </div>
-            </div>
-        </article>
+            </form>
+        </div>
     </div>
-</form>
+
+    <div class="column">
+        <div class="column box">
+            <table class="container">
+                <thead>
+                <tr>
+                    <th>Titel</th>
+                    <th>Beskrivelse</th>
+                    <th>Dato</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="menu:${menus}">
+                    <td style="padding: 0.5rem" th:text="${menu.title}"/>
+                    <td style="padding: 0.5rem;">
+                        <textarea class="textarea" th:text="${menu.description}" disabled></textarea>
+                    </td>
+                    <td style="padding: 0.5rem" th:text="${#dates.format(menu.getDate(), 'dd-MM-yyyy')}"/>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
 <script>
-    var datepicker = new ej.calendars.DatePicker({width: "255px"});
+    var datepicker = new ej.calendars.DatePicker({width: "120px"});
     datepicker.appendTo('#datepicker');
 </script>
 
