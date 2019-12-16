@@ -20,7 +20,7 @@ public class WizkidsUserController {
     @Autowired
     private AuthorityRepository authorityRepository;
     @Autowired
-    PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     @RequestMapping(value = "/createnewuser", method = RequestMethod.POST)
     public ModelAndView createUser(@Valid @ModelAttribute WizkidsUser wizkidsUser) {
