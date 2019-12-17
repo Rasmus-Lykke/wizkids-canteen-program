@@ -39,6 +39,8 @@ import java.util.Date;
         @Transient
         private String role;
 
+        @Transient
+        private long wizkidsUserId;
     }
 
 

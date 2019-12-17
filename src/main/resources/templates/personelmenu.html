@@ -13,9 +13,11 @@
 <div class="tabs is-large columns is-vcentered">
     <div class="column is-8 is-paddingless" >
         <ul style="padding-top: 15px; padding-left: 100px">
-            <li><a><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a></li>
+            <li>
+                <a><img style="height: 35px" src="images/headerLogo.png" alt="Header logo"></a>
+            </li>
             <li class="is-active"><a href="/personelmenu">Menu</a></li>
-            <li><a href="/personelorders">Ordrer</a></li>
+            <li><a href="/personelorders">Ordre</a></li>
             <li><a href="/personelforum">Forum</a></li>
             <li><a href="/personelhelp">Hjælp</a></li>
         </ul>
@@ -28,5 +30,38 @@
         </ul>
     </div>
 </div>
+
+<div class="column is-">
+    <div class="column box">
+            <table class="container">
+            <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Beskrivelse</th>
+                <th>Dato</th>
+                <th><p class="subtitle has-text-success" th:if="${param.menuordered}">Maden er bestilt</p></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="menu:${menus}">
+                <td style="padding-right: 10px" th:text="${menu.title}"/>
+                <td style="padding-right: 10px">
+                    <textarea class="textarea" th:text="${menu.description}" disabled></textarea>
+                </td>
+                <td style="padding-right: 10px" th:text="${#dates.format(menu.getDate(), 'dd-MM-yyyy')}"/>
+                <!--<td style="padding-right: 10px">
+                    <textarea class="textarea" name="comments" placeholder="Kommentar" maxlength="150"></textarea>
+                </td>-->
+                <td>
+                    <a method="post" class="button is-block is-info is-small" th:href="@{'/createorder/'+${menu.id}}">Bestil</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+</div>
+
 </body>
 </html>

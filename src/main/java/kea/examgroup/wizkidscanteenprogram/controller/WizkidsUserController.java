@@ -5,6 +5,8 @@ import kea.examgroup.wizkidscanteenprogram.model.WizkidsUser;
 import kea.examgroup.wizkidscanteenprogram.repository.AuthorityRepository;
 import kea.examgroup.wizkidscanteenprogram.repository.WizkidsUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
@@ -16,11 +18,13 @@ import javax.validation.Valid;
 public class WizkidsUserController {
 
     @Autowired
-    private WizkidsUserRepository wizkidsUSerRepository;
+    private WizkidsUserRepository wizkidsUserRepository;
     @Autowired
     private AuthorityRepository authorityRepository;
     @Autowired
     PasswordEncoder passwordEncoder;
+
+    WizkidsUser wizkidsUser = new WizkidsUser();
 
     @RequestMapping(value = "/createnewuser", method = RequestMethod.POST)
     public ModelAndView createUser(@Valid @ModelAttribute WizkidsUser wizkidsUser) {
@@ -31,7 +35,7 @@ public class WizkidsUserController {
         authority.setWizkidsUser(wizkidsUser);
         authority.setAuthority(wizkidsUser.getRole());
 
-        wizkidsUSerRepository.save(wizkidsUser);
+        wizkidsUserRepository.save(wizkidsUser);
         authorityRepository.save(authority);
 
         return new ModelAndView(
@@ -40,6 +44,7 @@ public class WizkidsUserController {
 
     @RequestMapping(value = "/menu", method = RequestMethod.GET)
     public ModelAndView checkUserType(HttpServletRequest request) {
+
 
         if(request.isUserInRole("ROLE_USER")){
             System.out.println("Logged in as: USER");

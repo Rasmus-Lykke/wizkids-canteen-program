@@ -1,6 +1,7 @@
 package kea.examgroup.wizkidscanteenprogram.controller;
 
 import kea.examgroup.wizkidscanteenprogram.model.Menu;
+import kea.examgroup.wizkidscanteenprogram.model.Order;
 import kea.examgroup.wizkidscanteenprogram.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +38,13 @@ public class MenuController {
         Iterable<Menu> menuList = menuRepository.findAll();
         model.addAttribute("menus", menuList);
         return "/canteenmenu";
+    }
+
+    @GetMapping("/personelmenu")
+    public String toPersonelMenu(Model model) {
+        Iterable<Menu> menuList = menuRepository.findAll();
+        model.addAttribute("menus", menuList);
+        return "/personelmenu";
     }
 
 }
