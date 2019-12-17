@@ -29,5 +29,27 @@
         </ul>
     </div>
 </div>
+
+
+<div class="column">
+    <div class="column box">
+        <table class="container">
+            <thead>
+            <tr>
+                <th>Titel</th>
+                <th>Beskrivelse</th>
+                <th>Dato</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order:${orders}">
+                <td style="padding: 0.5rem" th:text="${order.menuId}"/>
+                <td style="padding: 0.5rem" th:text="${order.wizkidsUserId}"/>
+                <td style="padding: 0.5rem" th:text="${#dates.format(order.getDate(), 'dd-MM-yyyy')}"/>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>

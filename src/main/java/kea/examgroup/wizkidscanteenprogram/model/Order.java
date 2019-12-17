@@ -27,4 +27,6 @@ public class Order {
 
     private String comment;
 
+    @Transient
+    private String firstName;
 }
