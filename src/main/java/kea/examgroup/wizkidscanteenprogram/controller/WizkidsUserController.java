@@ -61,5 +61,7 @@ public class WizkidsUserController {
                     new RedirectView("/login", true));
         }
 
+
+
     }
 }

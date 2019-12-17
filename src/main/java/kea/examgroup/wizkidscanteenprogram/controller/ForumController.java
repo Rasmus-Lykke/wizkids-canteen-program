@@ -22,7 +22,7 @@ public class ForumController {
 
 
     @GetMapping("/persoenlforum")
-    public ModelAndView personelForum(Model model) {
+    public ModelAndView toPersonelForum(Model model) {
         Iterable<Forum> forumList = forumRepository.findAll();
         model.addAttribute("forums", forumList);
         return new ModelAndView(

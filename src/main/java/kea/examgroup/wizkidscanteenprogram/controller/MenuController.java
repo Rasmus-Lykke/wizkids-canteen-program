@@ -22,6 +22,7 @@ public class MenuController {
     private MenuRepository menuRepository;
 
 
+
     @RequestMapping(value = "/createmenu", method = RequestMethod.POST)
     public ModelAndView createMenu(@Valid @ModelAttribute Menu menu) {
 
