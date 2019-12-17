@@ -14,7 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 public class MenuController {
@@ -27,7 +26,7 @@ public class MenuController {
     public ModelAndView createMenu(@Valid @ModelAttribute Menu menu) {
 
         menuRepository.save(menu);
-        System.out.println("Created menu: " + menu.getTitle() + ". For the date: ");
+        System.out.println("Created menu: " + menu.getTitle() + ". For the date: " + menu.getDate());
 
         return new ModelAndView(
                 new RedirectView("/canteenmenu?menucreated", true));

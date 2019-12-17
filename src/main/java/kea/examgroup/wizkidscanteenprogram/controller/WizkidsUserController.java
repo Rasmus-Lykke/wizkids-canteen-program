@@ -22,7 +22,7 @@ public class WizkidsUserController {
     @Autowired
     private AuthorityRepository authorityRepository;
     @Autowired
-    PasswordEncoder passwordEncoder;
+    private PasswordEncoder passwordEncoder;
 
     WizkidsUser wizkidsUser = new WizkidsUser();
 
