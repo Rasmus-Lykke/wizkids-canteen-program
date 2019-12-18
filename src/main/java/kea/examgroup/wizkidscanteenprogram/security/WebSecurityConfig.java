@@ -19,6 +19,14 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.sql.DataSource;
 
+/*
+ * Authors: Rasmus
+ *
+ * The primary security class for the program.
+ * This class uses the spring annotations, to create a database table
+ * and automatic getters and setters for the class.
+ */
+
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -26,6 +34,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private DataSource dataSource;
 
+    // Method which handles the Http security.
+    // This method gives access to folders, pages, and files based on the type of role the user has
+    // and based on whether the user i logged in or not. It also defines to login page and which page to redirect
+    // the user tho when he/she has successfully logged out ot in. And much more.
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
@@ -47,6 +59,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll();
     }
 
+    // Method which handles the login credentials and check if the user is already registred in the system
+    // and compares the input with the saved username and password information
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
@@ -64,6 +78,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         builder.jdbcAuthentication().passwordEncoder(new BCryptPasswordEncoder()).dataSource(dataSource);
     }
 
+    // Password encode for the encryption.
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

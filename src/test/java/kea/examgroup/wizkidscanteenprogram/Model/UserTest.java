@@ -16,7 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @AutoConfigureTestDatabase
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CreateUserTest {
+public class UserTest {
 
     @Autowired
     WizkidsUserRepository wizkidsUserRepository;
@@ -25,13 +25,11 @@ public class CreateUserTest {
 
     @Test
     public void createUserTest() {
-
-        // Check at databasen er tom
+        // Check that the database is empty
         assertThat(wizkidsUserRepository.count()).isEqualTo(0);
 
-        // Arrenger
-        // Gem værdier til objektet
-
+        // Arrange
+        // Save the values to the object
         wizkidsUser.setFirstName("Rasmus");
         wizkidsUser.setLastName("Sørensen");
         wizkidsUser.setUsername("rasmus@sørensen.com");
@@ -40,11 +38,11 @@ public class CreateUserTest {
         wizkidsUser.setGender("MALE");
 
         // Act
-        // Gem objectet i databasen
+        // Save the object to the database
         wizkidsUserRepository.save(wizkidsUser);
 
         // Assert
-        // Check om brugeren er blevet oprettet i databasen
+        // Check that the user have been saved to the database
         assertThat(wizkidsUserRepository.existsById(1L)).isEqualTo(true);
     }
 
