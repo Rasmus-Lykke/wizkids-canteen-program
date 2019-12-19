@@ -31,10 +31,12 @@ public class Order {
 
     // Long variable which works as a foreign key
     @JoinColumn(name="menus_id")
+    @NotNull
     private long menuId;
 
     // Long variable which works as a foreign key
     @JoinColumn(name="wizkidsuser_id")
+    @NotNull
     private long wizkidsUserId;
 
     // Variable which store comments to the order

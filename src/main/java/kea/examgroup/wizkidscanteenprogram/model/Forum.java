@@ -3,6 +3,7 @@ package kea.examgroup.wizkidscanteenprogram.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /*
  * Authors: Rasmus
@@ -22,7 +23,12 @@ public class Forum {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    // String variable which stores the title of the question
+    @NotNull
+    private String title;
+
     // String variable which stores the Wizkids user question
+    @NotNull
     private String question;
 
     // String variable which store the canteen employees answer to the question

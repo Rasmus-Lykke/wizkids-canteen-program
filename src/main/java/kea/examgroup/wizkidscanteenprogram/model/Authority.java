@@ -3,6 +3,7 @@ package kea.examgroup.wizkidscanteenprogram.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 /*
  * Authors: Rasmus
@@ -25,8 +26,10 @@ public class Authority {
     // Variable which acts as a foreign key
     @ManyToOne
     @JoinColumn(name="wizkidsuser_id")
+    @NotNull
     private WizkidsUser wizkidsUser;
 
     // String which stores the usertype for example "ROLE_USER" or "ROLE_ADMIN"
+    @NotNull
     private String authority;
 }

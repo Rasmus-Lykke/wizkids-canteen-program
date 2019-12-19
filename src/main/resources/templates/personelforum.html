@@ -29,70 +29,10 @@
         </ul>
     </div>
 </div>
-<!--
-<div class="columns" style="padding: 5rem">
-    <div class="column is-vcentered is-one-third">
-        <div class="column box">
-            <form method="post" class="container" th:action="@{'/addquestion'}">
-                <div class="field">
-                    <label class="label">Opret spørgsmål</label>
-                    <div class="control">
-                        <label>
-                            <input class="input is-halfwidth" type="text" name="title" placeholder="Titel">
-                        </label>
-                    </div>
-                </div>
-                <div class="field">
-                    <div>
-                        <label>
-                            <textarea class="textarea" name="question" placeholder="Stil dit spørgsmål her."
-                                      maxlength="150">
-                            </textarea>
-                        </label>
-                    </div>
-                </div>
 
-                <div class="field">
-                    <div>
-                        <label>
-                            <textarea class="textarea" name="reply"
-                                      placeholder="Spøgsmålet vil blive besvaret hurtigst muligt af kantinepersonalet."
-                                      maxlength="150" disabled>
-                            </textarea>
-                        </label>
-                    </div>
-                </div>
-
-                <div>
-                    <input class="button is-link is-rounded" type="submit" value="Opret menu">
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <div class="column">
-        <div class="column box">
-            <table class="container">
-                <thead>
-                <tr>
-                    <th>Spørgsmål</th>
-                    <th>Svar</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="forum:${forums}"></tr>
-                <td style="padding: 0.5rem;">
-                    <textarea class="textarea" th:text="${forum.question}" disabled></textarea>
-                </td>
-                <td>
-                    <textarea class="textarea" th:text="${forum.reply}" disabled></textarea>
-                </td>
-                </tbody>
-            </table>
-        </div>
-    </div>
+<div class="column box">
+    <p class="Title">Under vedligeholdelse</p>
 </div>
--->
 
 </body>
 </html>

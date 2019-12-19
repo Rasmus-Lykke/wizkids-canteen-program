@@ -29,9 +29,11 @@ import java.util.Date;
         private Long id;
 
         // Variable which stores the first name
+        @NotNull
         private String firstName;
 
         // Variable which stores the last name
+        @NotNull
         private String lastName;
 
         //Variable which stores the date of birth. Spring annotations which validates that the date is in the past
@@ -44,15 +46,19 @@ import java.util.Date;
         // Variable which stores the email. The Spring annotation makes sure that the string includes "@"
         // followed by at least one more character
         @Email(message = "Email should be valid")
+        @NotNull
         private String username;
 
         // String variable which stores the password
+        @NotNull
         private String password;
 
         // String variable which stores the gender
+        @NotNull
         private String gender;
 
         // Boolean which must be set to true for the user to be able to login
+        @NotNull
         private boolean enabled = true;
 
         // Variable which stores the role of the user. The transient annotation makes sure the variable

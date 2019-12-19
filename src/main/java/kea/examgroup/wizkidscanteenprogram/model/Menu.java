@@ -27,9 +27,11 @@ public class Menu {
     private Long id;
 
     // Variable which stores the title of the menu
+    @NotNull
     private String title;
 
     // Variable which stores the description of the menu
+    @NotNull
     private String description;
 
     //Variable which stores the date for the menu. Spring annotations which validates that the date is in the future
