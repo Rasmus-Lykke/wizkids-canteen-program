@@ -1,0 +1,4 @@
+@DirtiesContext may be used as a class-level and method-level annotation within the same class. In such scenarios,
+the ApplicationContext will be marked as dirty after any such annotated method as well as after the entire class.
+If the DirtiesContext.ClassMode is set to AFTER_EACH_TEST_METHOD,
+the context will be marked dirty after each test method in the class.
