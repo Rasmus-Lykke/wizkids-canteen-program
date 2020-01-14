@@ -34,16 +34,16 @@
         <table class="container">
             <thead>
             <tr>
-                <th>Menu Id</th>
-                <th>User Id</th>
-                <th>Dato</th>
+                <th style="padding: 1rem">Menu Id</th>
+                <th style="padding: 1rem">Bruger Id</th>
+                <th style="padding: 1rem">Dato</th>
             </tr>
             </thead>
             <tbody>
             <tr th:each="order:${orders}">
-                <td style="padding: 0.5rem" th:text="${order.menuId}"/>
-                <td style="padding: 0.5rem" th:text="${order.wizkidsUserId}"/>
-                <td style="padding: 0.5rem" th:text="${#dates.format(order.getDate(), 'dd-MM-yyyy')}"/>
+                <td style="padding: 1rem" th:text="${order.menuId}"/>
+                <td style="padding: 1rem" th:text="${order.wizkidsUserId}"/>
+                <td style="padding: 1rem" th:text="${#dates.format(order.getDate(), 'dd-MM-yyyy')}"/>
             </tr>
             </tbody>
         </table>
